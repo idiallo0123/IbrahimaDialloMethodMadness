@@ -7,7 +7,7 @@ public class IDialloLib
         String sub1 = "";
         String sub2 = "";
 
-        if((input.length()%2) == 0)  //Even number or char
+        if((input.length()%2) == 0)  //Even number of char
         {
             sub1 = input.substring(0, (input.length()/2));
             sub2 = input.substring((input.length()/2), input.length());
@@ -15,7 +15,7 @@ public class IDialloLib
         else
         {
             sub1 = input.substring(0, (input.length()/2)); //That 0.5 will round down
-            sub2 = input.substring((input.length()/2), (input.length()+1));
+            sub2 = input.substring((input.length()/2)+1, input.length());
         }
 
         for(int i = 0; i < sub2.length(); i++)

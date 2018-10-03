@@ -7,4 +7,3 @@ public class Main {
         System.out.println(IDialloLib.isPalindrome("racecar"));
     }
 }
-//Check to see if I can update to github
