@@ -6,26 +6,30 @@ public class IDialloLib
     {
         String sub1 = "";
         String sub2 = "";
-
-        if((input.length()%2) == 0)  //Even number of char
+        int i = 0;
+        while(i < (input.length()/2)) //racecar
         {
-            sub1 = input.substring(0, (input.length()/2));
-            sub2 = input.substring((input.length()/2), input.length());
+            sub1 = input.substring(i, i+1);
+            sub2 = input.substring((input.length() - i)-1, (input.length() - i));
+            if(!sub1.equals(sub2))
+            {
+                return false;
+            }
+            i = i + 1;
         }
-        else
-        {
-            sub1 = input.substring(0, (input.length()/2)); //That 0.5 will round down
-            sub2 = input.substring((input.length()/2)+1, input.length());
-        }
+        System.out.println("i is " + i);
+        System.out.println("input.length()/2 is " + (input.length()/2));
+        return true;
+    }
 
-        for(int i = 0; i < sub2.length(); i++)
-        {
-            sub2 = sub2.substring(sub2.length()) + sub2.substring(0, (sub2.length()+1));
-            //This loop will reverse the order of char in sub2
-        }
+    public static String dateStr(String input)
+    {
+        //Make mm/dd/yyyy into dd-mm-yyyy
+        String months = input.substring(0,2);
+        String days = input.substring(3,5);
+        String years = input.substring(6);
 
-        System.out.println(sub1);
-        System.out.println(sub2);
-        return(sub1.equals(sub2));
+        return(days+"-"+months+"-"+years);
+        //Because the input will always be 9 char long I do not need to use loops for scalability
     }
 }
