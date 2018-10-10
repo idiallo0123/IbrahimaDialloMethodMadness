@@ -1,6 +1,6 @@
 package IbrahimaDiallo;
 
-public class Main {
+public class testFile {
 
     public static void main(String[] args) {
 
